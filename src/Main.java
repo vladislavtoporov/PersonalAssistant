@@ -24,7 +24,7 @@ public class Main {
         */
         //Получаем XML с погодой.
         try {
-            xmlDoc = parser.build(new URL("http://api.openweathermap.org/data/2.5/forecast?q=Kazan&mode=xml&appid=c897b438605eff38e5df5f6928351367&units=metric"));
+            xmlDoc = parser.build(new URL("http://api.openweathermap.org/data/2.5/forecast/daily?q=Kazan&mode=xml&appid=c897b438605eff38e5df5f6928351367&units=metric"));
             List elements = xmlDoc.getRootElement().getContent(new ElementFilter("forecast"));
             Iterator iterator = elements.iterator();
             while(iterator.hasNext()) {
@@ -34,18 +34,12 @@ public class Main {
                 while (itr.hasNext()) {
                     Element day = (Element)itr.next();
                     //Узнаем дату
-                    String StrDate = day.getChildText("day");
-                    //Переведем их в более удобный формат
-                    String dt2 = "";
-                   /* for (int i = StrDate.length() - 1; i >= 0; i--) {
-                        if (StrDate.charAt(i) != '-')
-                            dt2 += StrDate.charAt(i);
-                    }*/
+                    String StrDate = day.getAttributeValue("day");
                     System.out.println("Прогноз на: " + StrDate);
                     //Температура
                     Element temperature = day.getChild("temperature");
-                    String max_temp = temperature.getChildText("max");
-                    String min_temp = temperature.getChildText("min");
+                    String max_temp = temperature.getAttributeValue("max");
+                    String min_temp = temperature.getAttributeValue("min");
                     System.out.println("Температура \nМаксимум: " + max_temp + "\nМинимум: " + min_temp);
                 }
             }
