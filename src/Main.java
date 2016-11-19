@@ -38,9 +38,11 @@ public class Main {
                     System.out.println("Прогноз на: " + StrDate);
                     //Температура
                     Element temperature = day.getChild("temperature");
-                    String max_temp = temperature.getAttributeValue("max");
-                    String min_temp = temperature.getAttributeValue("min");
-                    System.out.println("Температура \nМаксимум: " + max_temp + "\nМинимум: " + min_temp);
+                    String morning = temperature.getAttributeValue("morn");
+                    String dayt = temperature.getAttributeValue("day");
+                    String evening = temperature.getAttributeValue("eve");
+                    String night = temperature.getAttributeValue("night");
+                    System.out.println("Температура \nУтром: " + morning + " Днем: " + dayt + "\nВечером: " + evening + " Ночью: " + night);
                 }
             }
         }
