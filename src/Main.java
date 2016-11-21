@@ -42,13 +42,68 @@ public class Main {
                     //Температура
                     Element temperature = day.getChild("temperature");
                     String value = temperature.getAttributeValue("value");
-                    System.out.println("Температура: " + value);
+                    if (value.charAt(0) != '-'){
+                        System.out.println("Температура: " + "+" + value + " °C");
+                    }
+                    else
+                        System.out.println("Температура: " + value + " °C");
                     Element sky = day.getChild("clouds");
                     String clouds = sky.getAttributeValue("value");
                     System.out.println("Состояние погоды: " + clouds);
                     Element wind = day.getChild("windSpeed");
                     String speed = wind.getAttributeValue("mps");
-                    System.out.println("Скорость ветра: " + speed + " м/с");
+                    String direction = day.getChild("windDirection").getAttributeValue("code");
+                    switch (direction) {
+                        case "S":
+                            direction = "южный";
+                            break;
+                        case "N":
+                            direction = "северный";
+                            break;
+                        case "E":
+                            direction = "восточный";
+                            break;
+                        case "W":
+                            direction = "западный";
+                            break;
+                        case "SE":
+                            direction = "юго-восточный";
+                            break;
+                        case "SW":
+                            direction = "юго-западный";
+                            break;
+                        case "NE":
+                            direction = "северо-восточный";
+                            break;
+                        case "NW":
+                            direction = "северо-западный";
+                            break;
+                        case "SSE":
+                            direction = "юго-юговосточный";
+                            break;
+                        case "SSW":
+                            direction = "юго-югозападный";
+                            break;
+                        case "NNE":
+                            direction = "северо-северовосточный";
+                            break;
+                        case "NNW":
+                            direction = "северо-северозападный";
+                            break;
+                        case "ESE":
+                            direction = "восточно-юговосточный";
+                            break;
+                        case "WSW":
+                            direction = "западно-югозападный";
+                            break;
+                        case "ENE":
+                            direction = "восточно-северовосточный";
+                            break;
+                        case "WNW":
+                            direction = "западно-северозападный";
+                            break;
+                    }
+                    System.out.println("Ветер " + direction + ", дует со скоростью " + speed + " м/с");
                     System.out.println();
                 }
             }
