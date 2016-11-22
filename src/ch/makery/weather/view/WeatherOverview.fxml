@@ -35,7 +35,7 @@
             </AnchorPane>
             <AnchorPane prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <Label alignment="CENTER" layoutX="4.0" prefHeight="62.0" prefWidth="324.0" stylesheets="@DarkTheme.css" text="Today">
+                  <Label alignment="CENTER" layoutX="4.0" prefHeight="49.0" prefWidth="324.0" stylesheets="@DarkTheme.css" text="Today">
                      <styleClass>
                         <String fx:value="label-bright" />
                         <String fx:value="label-header" />
@@ -53,12 +53,12 @@
          <content>
             <GridPane prefHeight="678.0" prefWidth="1326.0" stylesheets="@DarkTheme.css">
               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="105.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="110.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="70.0" />
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="70.0" />
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="70.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
               </columnConstraints>
               <rowConstraints>
@@ -73,7 +73,7 @@
                   <Label alignment="CENTER" prefHeight="17.0" prefWidth="199.0" text="Helpful tips" GridPane.columnIndex="2" />
                   <Label alignment="CENTER" layoutX="396.0" layoutY="27.0" prefHeight="17.0" prefWidth="199.0" text="Helpful tips" GridPane.columnIndex="4" />
                   <Label alignment="CENTER" layoutX="203.0" layoutY="27.0" prefHeight="17.0" prefWidth="208.0" text="Tomorrow" GridPane.columnIndex="3" />
-                  <Label alignment="CENTER" layoutX="781.0" layoutY="27.0" prefHeight="17.0" prefWidth="199.0" text="Helpful tips" GridPane.columnIndex="6" />
+                  <Label alignment="CENTER" layoutX="781.0" layoutY="27.0" prefHeight="19.0" prefWidth="140.0" text="Helpful tips" GridPane.columnIndex="6" />
                   <Label alignment="CENTER" layoutX="589.0" layoutY="27.0" prefHeight="17.0" prefWidth="208.0" text="After tomorrow" GridPane.columnIndex="5" />
                   <Label alignment="CENTER" layoutX="203.0" layoutY="27.0" prefHeight="17.0" prefWidth="208.0" text="Lovely morning" GridPane.rowIndex="1" />
                   <Label alignment="CENTER" layoutX="10.0" layoutY="130.0" prefHeight="17.0" prefWidth="208.0" text="Long day" GridPane.rowIndex="2" />
