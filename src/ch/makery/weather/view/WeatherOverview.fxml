@@ -1,29 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1280.0" styleClass="background" stylesheets="@DarkTheme.css" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <SplitPane dividerPositions="0.2508361204013378, 0.5016722408026756, 0.8327759197324415" prefHeight="200.0" prefWidth="607.0" AnchorPane.bottomAnchor="350.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <SplitPane dividerPositions="0.29381443298969073, 0.4852724594992636, 0.7592047128129602" prefHeight="200.0" prefWidth="1190.0" styleClass="background" stylesheets="@DarkTheme.css" AnchorPane.bottomAnchor="650.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <items>
-            <AnchorPane prefHeight="49.0" prefWidth="249.0">
-               <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" layoutY="16.0" prefHeight="17.0" prefWidth="147.0" text="Погода" textAlignment="CENTER" textOverrun="CLIP" />
-               </children>
-            </AnchorPane>
             <AnchorPane prefHeight="48.0" prefWidth="33.0">
                <children>
-                  <MenuButton layoutX="7.0" layoutY="12.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="134.0" text="Выберите город:">
+                  <Label alignment="CENTER" layoutX="2.0" prefHeight="62.0" prefWidth="394.0" styleClass="label-header" stylesheets="@DarkTheme.css" text="Weather" />
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <MenuButton layoutX="13.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="209.0" styleClass="label-bright" stylesheets="@DarkTheme.css" text="Choose your city">
                     <items>
                       <MenuItem mnemonicParsing="false" text="Action 1" />
                       <MenuItem mnemonicParsing="false" text="Action 2" />
@@ -33,59 +35,101 @@
             </AnchorPane>
             <AnchorPane prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <Label alignment="CENTER" layoutX="2.0" layoutY="16.0" prefHeight="17.0" prefWidth="192.0" text="Сегодня" />
+                  <Label alignment="CENTER" layoutX="4.0" prefHeight="62.0" prefWidth="324.0" stylesheets="@DarkTheme.css" text="Today">
+                     <styleClass>
+                        <String fx:value="label-bright" />
+                        <String fx:value="label-header" />
+                     </styleClass></Label>
                </children>
             </AnchorPane>
-            <AnchorPane prefHeight="48.0" prefWidth="266.0">
+            <AnchorPane prefHeight="51.0" prefWidth="207.0">
                <children>
-                  <Button layoutX="14.0" layoutY="12.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="79.0" text="обновить" />
+                  <Button layoutX="103.0" layoutY="2.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="118.0" text="Update" />
                </children>
             </AnchorPane>
          </items>
       </SplitPane>
-      <ScrollPane layoutY="75.0" prefHeight="330.0" prefWidth="607.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+      <ScrollPane layoutY="75.0" prefHeight="690.0" prefWidth="1360.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
          <content>
-            <GridPane prefHeight="539.0" prefWidth="604.0">
+            <GridPane prefHeight="678.0" prefWidth="1326.0" stylesheets="@DarkTheme.css">
               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="105.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
               </columnConstraints>
               <rowConstraints>
-                  <RowConstraints minHeight="5.0" prefHeight="5.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="5.0" prefHeight="5.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="5.0" prefHeight="5.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="5.0" prefHeight="5.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="178.0" text="Утро" GridPane.columnIndex="1" />
-                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="175.0" text="День" GridPane.columnIndex="2" />
-                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="156.0" text="Вечер" GridPane.columnIndex="3" />
-                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="76.0" text="Сегодня" GridPane.rowIndex="1" />
-                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="80.0" text="Завтра" GridPane.rowIndex="3" />
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="78.0" text="Послезавтра" GridPane.rowIndex="5" />
-                  <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <Label text="Label" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                  <Label text="Label" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-                  <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                  <Label text="Label" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-                  <Label text="Label" GridPane.columnIndex="3" GridPane.rowIndex="4" />
-                  <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                  <Label text="Label" GridPane.columnIndex="2" GridPane.rowIndex="6" />
-                  <Label text="Label" GridPane.columnIndex="3" GridPane.rowIndex="6" />
-                  <ImageView fitHeight="131.0" fitWidth="178.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <ImageView fitHeight="130.0" fitWidth="177.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                  <ImageView fitHeight="128.0" fitWidth="172.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-                  <ImageView fitHeight="132.0" fitWidth="177.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                  <ImageView fitHeight="130.0" fitWidth="178.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-                  <ImageView fitHeight="130.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-                  <ImageView fitHeight="128.0" fitWidth="176.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                  <ImageView fitHeight="131.0" fitWidth="175.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-                  <ImageView fitHeight="125.0" fitWidth="172.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="208.0" text="Today" GridPane.columnIndex="1" />
+                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="199.0" text="Helpful tips" GridPane.columnIndex="2" />
+                  <Label alignment="CENTER" layoutX="396.0" layoutY="27.0" prefHeight="17.0" prefWidth="199.0" text="Helpful tips" GridPane.columnIndex="4" />
+                  <Label alignment="CENTER" layoutX="203.0" layoutY="27.0" prefHeight="17.0" prefWidth="208.0" text="Tomorrow" GridPane.columnIndex="3" />
+                  <Label alignment="CENTER" layoutX="781.0" layoutY="27.0" prefHeight="17.0" prefWidth="199.0" text="Helpful tips" GridPane.columnIndex="6" />
+                  <Label alignment="CENTER" layoutX="589.0" layoutY="27.0" prefHeight="17.0" prefWidth="208.0" text="After tomorrow" GridPane.columnIndex="5" />
+                  <Label alignment="CENTER" layoutX="203.0" layoutY="27.0" prefHeight="17.0" prefWidth="208.0" text="Lovely morning" GridPane.rowIndex="1" />
+                  <Label alignment="CENTER" layoutX="10.0" layoutY="130.0" prefHeight="17.0" prefWidth="208.0" text="Long day" GridPane.rowIndex="2" />
+                  <Label alignment="CENTER" layoutX="10.0" layoutY="130.0" prefHeight="17.0" prefWidth="208.0" text="Nice evening" GridPane.rowIndex="3" />
+                  <Label alignment="CENTER" layoutX="10.0" layoutY="444.0" prefHeight="17.0" prefWidth="208.0" text="Quiet night" GridPane.rowIndex="4" />
+                  <ImageView fitHeight="155.0" fitWidth="194.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <ImageView fitHeight="155.0" fitWidth="193.0" layoutX="396.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <image>
+                        <Image url="@../../../../../../../Desktop/resourse/PNGs/partlyCloudyDay.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="155.0" fitWidth="193.0" layoutX="203.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <image>
+                        <Image url="@../../../../../../../Desktop/resourse/PNGs/partlyCloudyDay.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="155.0" fitWidth="193.0" layoutX="203.0" layoutY="218.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <image>
+                        <Image url="@../../../../../../../Desktop/resourse/PNGs/partlyCloudyDay.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="155.0" fitWidth="193.0" layoutX="203.0" layoutY="375.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <image>
+                        <Image url="@../../../../../../../Desktop/resourse/PNGs/partlyCloudyDay.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="155.0" fitWidth="193.0" layoutX="203.0" layoutY="532.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                     <image>
+                        <Image url="@../../../../../../../Desktop/resourse/PNGs/partlyCloudyDay.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="155.0" fitWidth="193.0" layoutX="589.0" layoutY="532.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                     <image>
+                        <Image url="@../../../../../../../Desktop/resourse/PNGs/partlyCloudyDay.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="155.0" fitWidth="193.0" layoutX="589.0" layoutY="375.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                     <image>
+                        <Image url="@../../../../../../../Desktop/resourse/PNGs/partlyCloudyDay.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="155.0" fitWidth="193.0" layoutX="589.0" layoutY="218.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                     <image>
+                        <Image url="@../../../../../../../Desktop/resourse/PNGs/partlyCloudyDay.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="155.0" fitWidth="193.0" layoutX="589.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                     <image>
+                        <Image url="@../../../../../../../Desktop/resourse/PNGs/partlyCloudyDay.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="155.0" fitWidth="193.0" layoutX="973.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="2">
+                     <image>
+                        <Image url="@../../../../../../../Desktop/resourse/PNGs/partlyCloudyDay.png" />
+                     </image>
+                  </ImageView>
                </children>
             </GridPane>
          </content>
