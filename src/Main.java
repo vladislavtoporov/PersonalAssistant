@@ -11,9 +11,13 @@ public class Main {
 
     public static void main(String[] args) {
         SAXBuilder parser = new SAXBuilder();
+        final String KAZAN = "http://api.openweathermap.org/data/2.5/forecast?q=Kazan&mode=xml&appid=c897b438605eff38e5df5f6928351367&units=metric";
+        final String ALMET = "http://api.openweathermap.org/data/2.5/forecast?q=Almetyevsk&mode=xml&appid=c897b438605eff38e5df5f6928351367&units=metric";
+        final String CHELNY = "http://api.openweathermap.org/data/2.5/forecast?q=NaberezhnyeChelny&mode=xml&appid=c897b438605eff38e5df5f6928351367&units=metric";
+
 
         try {
-            URL url = new URL("http://api.openweathermap.org/data/2.5/forecast?q=Kazan&mode=xml&appid=c897b438605eff38e5df5f6928351367&units=metric");
+            URL url = new URL(KAZAN);
             Document xmlDoc = parser.build(url);
             List elements = xmlDoc.getRootElement().getContent(new ElementFilter("forecast"));
             Iterator iterator = elements.iterator();
@@ -104,16 +108,18 @@ public class Main {
                             speed = speed / 3;
                             value = value / 3;
                         }
-                        System.out.println("Date: " + date[0] + "\n" + dt);
-                        long val = Math.round(value);
-                        long spd = Math.round(speed);
+                        String wdate = "Date: " + date[0] + "\n" + dt;
+                        short val = (short)Math.round(value);
+                        short spd = (short)Math.round(speed);
+                        String wtemperatue = "Temperature: ";
                         if (value > 0){
-                            System.out.println("Temperature: " + "+" + val + " °C");
+                            wtemperatue += "+" + val + " °C";
                         }
                         else
-                            System.out.println("Temperature: " + val + " °C");
-                        System.out.println("Weather: " + symbol);
-                        System.out.println("Wind direction " + direction + ", speed is " + spd + " mps");
+                            wtemperatue += val + " °C";
+                        String wweather = "Weather: " + symbol;
+                        String wwind = "Wind direction " + direction + ", speed is " + spd + " mps";
+                        System.out.println(wdate + "\n" + wtemperatue + "\n" + wweather + "\n" + wwind);
                         System.out.println();
                     }
 
