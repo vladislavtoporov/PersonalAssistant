@@ -7,6 +7,7 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -27,8 +28,9 @@
                <children>
                   <MenuButton layoutX="13.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="209.0" styleClass="label-bright" stylesheets="@DarkTheme.css" text="Choose your city">
                     <items>
-                      <MenuItem mnemonicParsing="false" text="Action 1" />
-                      <MenuItem mnemonicParsing="false" text="Action 2" />
+                      <MenuItem mnemonicParsing="false" text="Kazan" />
+                      <MenuItem mnemonicParsing="false" text="Almetyevsk" />
+                       <MenuItem mnemonicParsing="false" text="Naberezhnye Chelny" />
                     </items>
                   </MenuButton>
                </children>
@@ -63,26 +65,26 @@
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="208.0" text="Today" GridPane.columnIndex="1" />
-                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="199.0" text="Helpful tips" GridPane.columnIndex="2" />
-                  <Label alignment="CENTER" layoutX="396.0" layoutY="27.0" prefHeight="17.0" prefWidth="199.0" text="Helpful tips" GridPane.columnIndex="4" />
-                  <Label alignment="CENTER" layoutX="203.0" layoutY="27.0" prefHeight="17.0" prefWidth="208.0" text="Tomorrow" GridPane.columnIndex="3" />
-                  <Label alignment="CENTER" layoutX="781.0" layoutY="27.0" prefHeight="19.0" prefWidth="140.0" text="Helpful tips" GridPane.columnIndex="6" />
-                  <Label alignment="CENTER" layoutX="589.0" layoutY="27.0" prefHeight="17.0" prefWidth="208.0" text="After tomorrow" GridPane.columnIndex="5" />
+                  <Label alignment="CENTER" prefHeight="50.0" prefWidth="188.0" text="Today" GridPane.columnIndex="1" />
+                  <Label alignment="CENTER" prefHeight="50.0" prefWidth="224.0" text="Helpful tips" GridPane.columnIndex="2" />
+                  <Label alignment="CENTER" layoutX="396.0" layoutY="27.0" prefHeight="53.0" prefWidth="218.0" text="Helpful tips" GridPane.columnIndex="4" />
+                  <Label alignment="CENTER" layoutX="203.0" layoutY="27.0" prefHeight="53.0" prefWidth="188.0" text="Tomorrow" GridPane.columnIndex="3" />
+                  <Label alignment="CENTER" layoutX="781.0" layoutY="27.0" prefHeight="19.0" prefWidth="217.0" text="Helpful tips" GridPane.columnIndex="6" />
+                  <Label alignment="CENTER" layoutX="589.0" layoutY="27.0" prefHeight="55.0" prefWidth="187.0" text="After tomorrow" GridPane.columnIndex="5" />
                   <Label alignment="CENTER" layoutX="203.0" layoutY="27.0" prefHeight="17.0" prefWidth="208.0" text="Lovely morning" GridPane.rowIndex="1" />
                   <Label alignment="CENTER" layoutX="10.0" layoutY="130.0" prefHeight="17.0" prefWidth="208.0" text="Long day" GridPane.rowIndex="2" />
                   <Label alignment="CENTER" layoutX="10.0" layoutY="130.0" prefHeight="17.0" prefWidth="208.0" text="Nice evening" GridPane.rowIndex="3" />
                   <Label alignment="CENTER" layoutX="10.0" layoutY="444.0" prefHeight="17.0" prefWidth="208.0" text="Quiet night" GridPane.rowIndex="4" />
                   <ImageView fitHeight="155.0" fitWidth="194.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-                  <ImageView fitHeight="155.0" fitWidth="193.0" layoutX="396.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <ImageView fitHeight="155.0" fitWidth="171.0" layoutX="396.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
-                        <Image url="@../../../../../../../Desktop/resourse/PNGs/partlyCloudyDay.png" />
+                        <Image url="@../../../../resourse/PNGs/partlyCloudyDay.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="155.0" fitWidth="193.0" layoutX="203.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
@@ -130,6 +132,28 @@
                         <Image url="@../../../../../../../Desktop/resourse/PNGs/partlyCloudyDay.png" />
                      </image>
                   </ImageView>
+                  <ImageView fitHeight="155.0" fitWidth="193.0" layoutX="932.0" layoutY="218.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="3">
+                     <image>
+                        <Image url="@../../../../../../../Desktop/resourse/PNGs/partlyCloudyDay.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="155.0" fitWidth="193.0" layoutX="932.0" layoutY="375.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="4">
+                     <image>
+                        <Image url="@../../../../../../../Desktop/resourse/PNGs/partlyCloudyDay.png" />
+                     </image>
+                  </ImageView>
+                  <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" text="gdggd" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" text="gdggd" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" text="gdggd" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                  <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" text="gdggd" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                  <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" text="gdggd" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                  <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" text="gdggd" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                  <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" text="gdggd" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                  <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" text="gdggd" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                  <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" text="gdggd" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+                  <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" text="gdggd" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+                  <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" text="gdggd" GridPane.columnIndex="6" GridPane.rowIndex="3" />
+                  <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" text="gdggd" GridPane.columnIndex="6" GridPane.rowIndex="4" />
                </children>
             </GridPane>
          </content>
