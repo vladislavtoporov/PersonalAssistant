@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.String?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="924.0" prefWidth="1663.0" styleClass="background" stylesheets="@DarkTheme.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="weather.Controller">
+    <children>
+        <SplitPane dividerPositions="0.29381443298969073, 0.4852724594992636, 0.7592047128129602" prefHeight="200.0" prefWidth="1190.0" styleClass="background" stylesheets="@DarkTheme.css" AnchorPane.bottomAnchor="650.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <items>
+                <AnchorPane prefHeight="48.0" prefWidth="33.0">
+                    <children>
+                        <Label alignment="CENTER" layoutX="2.0" prefHeight="62.0" prefWidth="394.0" styleClass="label-header" stylesheets="@DarkTheme.css" text="Weather" />
+                    </children>
+                </AnchorPane>
+                <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                    <children>
+                        <MenuButton layoutX="13.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="209.0" styleClass="label-bright" stylesheets="@DarkTheme.css" text="Choose your city">
+                            <items>
+                                <MenuItem fx:id="kazan" mnemonicParsing="false" onAction="#cityKazan" text="Kazan" />
+                                <MenuItem fx:id="chelny" mnemonicParsing="false" onAction="#cityChelny" text="Naberezhnye Chelny" />
+                                <MenuItem fx:id="almet" mnemonicParsing="false" onAction="#cityAlmet" text="Almetyevsk" />
+                            </items>
+                        </MenuButton>
+                    </children>
+                </AnchorPane>
+                <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                    <children>
+                        <Label fx:id="labelDate" alignment="CENTER" layoutX="4.0" prefHeight="49.0" prefWidth="324.0" stylesheets="@DarkTheme.css" text="Date">
+                            <styleClass>
+                                <String fx:value="label-bright" />
+                                <String fx:value="label-header" />
+                            </styleClass>
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                        </Label>
+                    </children>
+                </AnchorPane>
+                <AnchorPane prefHeight="51.0" prefWidth="207.0">
+                    <children>
+                        <Button fx:id="refresh" layoutX="103.0" layoutY="2.0" mnemonicParsing="false" onAction="#refresh" prefHeight="49.0" prefWidth="118.0" text="Refresh" />
+                    </children>
+                </AnchorPane>
+            </items>
+        </SplitPane>
+        <ScrollPane layoutY="75.0" prefHeight="690.0" prefWidth="1360.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+            <content>
+                <GridPane prefHeight="700.0" prefWidth="1280.0" stylesheets="@DarkTheme.css">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="200.0" prefWidth="110.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="10.0" minWidth="175.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="300.0" prefWidth="150.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="10.0" minWidth="175.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="300.0" prefWidth="150.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="10.0" minWidth="175.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="300.0" prefWidth="150.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints maxHeight="-Infinity" minHeight="100.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="10.0" minHeight="175.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="175.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="175.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="175.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="208.0" text="Today" GridPane.columnIndex="1" />
+                        <Label alignment="CENTER" prefHeight="19.0" prefWidth="302.0" text="Helpful tips" GridPane.columnIndex="2" />
+                        <Label alignment="CENTER" layoutX="203.0" layoutY="27.0" prefHeight="17.0" prefWidth="208.0" text="Tomorrow" GridPane.columnIndex="3" />
+                        <Label alignment="CENTER" layoutX="396.0" layoutY="27.0" prefHeight="19.0" prefWidth="306.0" text="Helpful tips" GridPane.columnIndex="4" />
+                        <Label alignment="CENTER" layoutX="589.0" layoutY="27.0" prefHeight="17.0" prefWidth="208.0" text="After tomorrow" GridPane.columnIndex="5" />
+                        <Label alignment="CENTER" layoutX="781.0" layoutY="27.0" prefHeight="19.0" prefWidth="140.0" text="Helpful tips" GridPane.columnIndex="6" />
+                        <Label alignment="CENTER" layoutX="203.0" layoutY="27.0" prefHeight="17.0" prefWidth="208.0" text="Lovely morning" GridPane.rowIndex="1" />
+                        <Label alignment="CENTER" layoutX="10.0" layoutY="130.0" prefHeight="17.0" prefWidth="208.0" text="Long day" GridPane.rowIndex="2" />
+                        <Label alignment="CENTER" layoutX="10.0" layoutY="130.0" prefHeight="17.0" prefWidth="208.0" text="Nice evening" GridPane.rowIndex="3" />
+                        <Label alignment="CENTER" layoutX="10.0" layoutY="444.0" prefHeight="17.0" prefWidth="208.0" text="Quiet night" GridPane.rowIndex="4" />
+                        <ImageView fx:id="imgTodayMorn" fitHeight="175.0" fitWidth="175.0" layoutX="396.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin></ImageView>
+                        <ImageView fx:id="imgToday" fitHeight="175.0" fitWidth="175.0" layoutX="203.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <ImageView fx:id="imgTodayEve" fitHeight="175.0" fitWidth="175.0" layoutX="203.0" layoutY="218.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <ImageView fx:id="imgTodayNight" fitHeight="175.0" fitWidth="175.0" layoutX="203.0" layoutY="375.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <ImageView fx:id="imgTomorrowMorn" fitHeight="175.0" fitWidth="175.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                        <ImageView fx:id="imgTomorrow" fitHeight="175.0" fitWidth="175.0" layoutX="589.0" layoutY="375.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                        <ImageView fx:id="imgTomorrowEve" fitHeight="175.0" fitWidth="175.0" layoutX="589.0" layoutY="532.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                        <ImageView fx:id="imgTomorrowNight" fitHeight="175.0" fitWidth="175.0" layoutX="203.0" layoutY="532.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                        <ImageView fx:id="imgAfterMorn" fitHeight="175.0" fitWidth="175.0" layoutX="589.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                        <ImageView fx:id="imgAfter" fitHeight="175.0" fitWidth="175.0" layoutX="973.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                        <ImageView fx:id="imgAfterEve" fitHeight="175.0" fitWidth="175.0" layoutX="932.0" layoutY="218.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+                        <ImageView fx:id="imgAfterNight" fitHeight="175.0" fitWidth="175.0" layoutX="932.0" layoutY="375.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+                        <TextArea fx:id="txtTodayMorn" editable="false" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="13.0" />
+                     </font></TextArea>
+                        <TextArea fx:id="txtToday" editable="false" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="13.0" />
+                     </font></TextArea>
+                        <TextArea fx:id="txtTodayEve" editable="false" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="13.0" />
+                     </font></TextArea>
+                        <TextArea fx:id="txtTodayNight" editable="false" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="13.0" />
+                     </font></TextArea>
+                        <TextArea fx:id="txtTomorrowMorn" editable="false" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="13.0" />
+                     </font></TextArea>
+                        <TextArea fx:id="txtTomorrow" editable="false" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="13.0" />
+                     </font></TextArea>
+                        <TextArea fx:id="txtTomorrowEve" editable="false" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="13.0" />
+                     </font></TextArea>
+                        <TextArea fx:id="txtTomorrowNight" editable="false" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="13.0" />
+                     </font></TextArea>
+                        <TextArea fx:id="txtAfterMorn" editable="false" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="6" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="13.0" />
+                     </font></TextArea>
+                        <TextArea fx:id="txtAfter" editable="false" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="6" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="13.0" />
+                     </font></TextArea>
+                        <TextArea fx:id="txtAfterEve" editable="false" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="6" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="13.0" />
+                     </font></TextArea>
+                        <TextArea fx:id="txtAfterNight" editable="false" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="6" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="13.0" />
+                     </font></TextArea>
+                    </children>
+                </GridPane>
+            </content>
+        </ScrollPane>
+    </children>
+</AnchorPane>

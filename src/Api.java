@@ -11,9 +11,9 @@ public class Api {
     final String KAZAN = "http://api.openweathermap.org/data/2.5/forecast?q=Kazan&mode=xml&appid=c897b438605eff38e5df5f6928351367&units=metric";
     final String ALMET = "http://api.openweathermap.org/data/2.5/forecast?q=Almetyevsk&mode=xml&appid=c897b438605eff38e5df5f6928351367&units=metric";
     final String CHELNY = "http://api.openweathermap.org/data/2.5/forecast?q=NaberezhnyeChelny&mode=xml&appid=c897b438605eff38e5df5f6928351367&units=metric";
-    private final int CAPACITY = 140;
+    private final int CAPACITY = 12;
 
-    public String[] weather(String city) {
+    private String[] weather(String city) {
         SAXBuilder parser = new SAXBuilder();
         String weather[] = new String[CAPACITY];
         int i = 0;
@@ -106,15 +106,10 @@ public class Api {
                         i++;
                         short val = (short) Math.round(value);
                         short spd = (short) Math.round(speed);
-                        weather[i] = "Temperature: ";
-                        if (value > 0) {
-                            weather[i] += "+" + val + " °C";
-                        } else
-                            weather[i] += val + " °C";
-                        i++;
+                        weather[i] += val;
                         weather[i] = "Wind direction " + direction + ", speed is " + spd + " mps";
                         i++;
-                        weather[i] = "Weather: " + symbol + "\n";
+                        weather[i] += symbol;
                         i++;
                     }
 
@@ -124,6 +119,12 @@ public class Api {
             e.printStackTrace();
         }
         return weather;
+    }
+    public  String getTemp(int n) {
+        return weather[1 + 4 * n];
+    }
+    public String getWeather(int n) {
+        return weather[3 + 4 * n];
     }
 
 }

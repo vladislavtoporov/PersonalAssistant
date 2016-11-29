@@ -1,152 +1,83 @@
-import clojure.main;
-import org.jdom2.Document;
-import org.jdom2.Element;
-import org.jdom2.JDOMException;
-import org.jdom2.filter.ElementFilter;
-import org.jdom2.input.SAXBuilder;
-import java.net.URL;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Scanner;
+package sample;
 
-public class Main {
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.stage.Stage;
+
+public class Main extends Application {
+
+    @Override
+    public void start(Stage primaryStage) throws Exception{
+        Parent root = FXMLLoader.load(getClass().getResource("ch/makery/weather/view/WeatherOverview.fxml"));
+        primaryStage.show();
+    }
 
 
     public static void main(String[] args) {
-        final String KAZAN = "http://api.openweathermap.org/data/2.5/forecast?q=Kazan&mode=xml&appid=c897b438605eff38e5df5f6928351367&units=metric";
-        final String ALMET = "http://api.openweathermap.org/data/2.5/forecast?q=Almetyevsk&mode=xml&appid=c897b438605eff38e5df5f6928351367&units=metric";
-        final String CHELNY = "http://api.openweathermap.org/data/2.5/forecast?q=NaberezhnyeChelny&mode=xml&appid=c897b438605eff38e5df5f6928351367&units=metric";
-        String[] w;
-        Scanner sc = new Scanner(System.in);
-        Api api = new Api();
-        int k = sc.nextInt();
-        if (k == 1) System.out.println(Arrays.toString(api.weather(KAZAN)));
-        else{
-            if (k == 2) System.out.println(Arrays.toString(api.weather(ALMET)));
-            else
-                System.out.println(Arrays.toString(api.weather(CHELNY)));
-        }
 
+        private final Image STORM = new Image("PNGs/storm.png");
+        private final Image SUNNY = new Image("PNGs/sunny.png");
+        private final Image CLOUDY = new Image("PNGs/cloudy.png");
+        private final Image CLEAR_MOON = new Image("PNGs/clearNightSky.png");
+        private final Image FOG = new Image("PNGs/fog.png");
+        private final Image PARTLY_CLOUDY_DAY = new Image("PNGs/partlyCloudyDay.png");
+        private final Image PARTLY_CLOUDLY_DAY = new Image("PNGs/partlyCloudyNight.png");
+        private final Image RAINY = new Image("PNGs/Rainy.png");
+        private final Image SNOWY = new Image("PNGs/snowy.png");
+        private final String TEMP_VERY_HOT = "Avoid heatstroke, drink more water and don't forget to put up your headwear.";
+        private final String TEMP_HOT = "It's great weather to go to the beach! Don't forget your shades!";
+        private final String TEMP_VERY_WARM = "A light clothes made of natural materials recommended.";
+        private final String TEMP_WARM = "You should wear light and warm clothes.";
+        private final String TEMP_WARMER = "Wearing overcoat or jacket is recommended.";
+        private final String TEMP_ZERO = "Caution!!! Sleet is possible! Please, be careful on the road! And wear warm jacket too.";
+        private final String TEMP_CHILLY = "It's good idea to go to the ice rink or go skiing.";
+        private final String TEMP_COLDER = "It's better to wear warm clothes.";
+        private final String TEMP_COLD = "You really should wear winter clothes now.";
+        private final String TEMP_VERY_COLD = "Wow, it's really cold out there. Better wear warm sweater and travel by subway.";
+        private final String TEMP_FREEZING = "Hopefully, you will manage to start your car (if you have a car). If not, you'd better to put up the warmest clothes you have.";
+        private final String TEMP_VERY_FREEZING = "Maybe it's better to stay in your warm comfortable home with a cup of hot tea and cookies?";
+        String temp = Api.getTemp(i);
+        String weather = Api.getWeather(i);
+        String advice = "";
+        if ((short) temp >= 30.0) {
+            advice += TEMP_VERY_HOT;
+        }
+        if ((short) temp < 30 && (short) temp >= 20) {
+            advice += TEMP_HOT;
+        }
+        if ((short) temp >= 15 && (short) temp < 20) {
+            advice += TEMP_VERY_WARM;
+        }
+        if ((short) temp >= 5 && (short) temp < 15) {
+            advice += TEMP_WARM;
+        }
+        if ((short) temp >= 1 && (short) temp < 5) {
+            advice += TEMP_WARMER;
+        }
+        if ((short) temp >= -1 && (short) temp < 1) {
+            advice += TEMP_ZERO;
+        }
+        if ((short) temp >= - 5 && (short) temp < -1) {
+            advice+= TEMP_CHILLY;
+        }
+        if ((short) temp >= -10 && (short) temp < -5) {
+            advice += TEMP_COLDER;
+        }
+        if ((short) temp >= -15 && (short) temp < -10) {
+            advice += TEMP_COLD;
+        }
+        if ((short) temp >= -20 && (short) temp < - 15) {
+            advice += TEMP_VERY_COLD;
+        }
+        if ((short) temp >= -30 && (short) temp < -20) {
+            advice += TEMP_FREEZING;
+        }
+        if ((short) temp < -30) {
+            advice += TEMP_VERY_FREEZING;
+        }
+        launch(args);
     }
-   /*     SAXBuilder parser = new SAXBuilder();
-        final String KAZAN = "http://api.openweathermap.org/data/2.5/forecast?q=Kazan&mode=xml&appid=c897b438605eff38e5df5f6928351367&units=metric";
-        final String ALMET = "http://api.openweathermap.org/data/2.5/forecast?q=Almetyevsk&mode=xml&appid=c897b438605eff38e5df5f6928351367&units=metric";
-        final String CHELNY = "http://api.openweathermap.org/data/2.5/forecast?q=NaberezhnyeChelny&mode=xml&appid=c897b438605eff38e5df5f6928351367&units=metric";
-
-
-        try {
-            URL url = new URL(KAZAN);
-            Document xmlDoc = parser.build(url);
-            List elements = xmlDoc.getRootElement().getContent(new ElementFilter("forecast"));
-            Iterator iterator = elements.iterator();
-
-            while(iterator.hasNext()) {
-                Element forecast = (Element)iterator.next();
-                List mixedCo = forecast.getChildren("time");
-                Iterator itr = mixedCo.iterator();
-
-                while (itr.hasNext()) {
-                    Element day = (Element)itr.next();
-                    //Узнаем дату
-                    String StrDate = day.getAttributeValue("from");
-                    String[] date = StrDate.split("T");
-                    String StrDate2 = day.getAttributeValue("to");
-                    String[] date2 = StrDate2.split("T");
-                    int time1 = (date[1].charAt(0) - '0') * 10 + date[1].charAt(1) - '0';
-                    int time2 = (date2[1].charAt(0) - '0') * 10 + date2[1].charAt(1) - '0';
-                    String dt = "";
-
-                    if (time1 == 6 && time2 == 9) {
-                        dt = "morning";
-                    }
-                    else {
-                        if (time1 >=9 && time2 <= 18) {
-                            dt = "day";
-                        }
-                        else {
-                            if (time1 == 18 && time2 == 21) {
-                                dt = "evening";
-                            }
-                            else {
-                                dt = "night";
-                            }
-                        }
-                    }
-
-
-                    Element sky = day.getChild("symbol");
-                    String code = sky.getAttributeValue("number");
-                    int num = Integer.parseInt(code);
-                    String symbol = "";
-
-                    switch (num / 100) {
-                        case 2:
-                            symbol = "thunderstorm";
-                            break;
-                        case 3:
-                            symbol = "rain";
-                            break;
-                        case 5:
-                            symbol = "rain";
-                            break;
-                        case 6:
-                            symbol = "snow";
-                            break;
-                        case 7:
-                            symbol = "fog";
-                            break;
-                        case 8:
-                            if (num == 800) {
-                                symbol = "clear sky";
-                            }
-                            else {
-                                if (num == 801){
-                                    symbol = "few clouds";
-                                }
-                                else {
-                                    symbol = "cloudy";
-                                }
-                            }
-                            break;
-                    }
-
-                    Element temperature = day.getChild("temperature");
-                    double value = Double.parseDouble(temperature.getAttributeValue("value"));
-                    Element wind = day.getChild("windSpeed");
-                    double speed = Double.parseDouble(wind.getAttributeValue("mps"));
-                    String direction = day.getChild("windDirection").getAttributeValue("name");
-
-                    if ((time2 > 9 && time2 < 18) || !(time2 <= 21 && time2 >= 6)) {
-                        speed += Double.parseDouble(wind.getAttributeValue("mps"));
-                        value += Double.parseDouble(temperature.getAttributeValue("value"));
-                    }
-                    else {
-                        if (time2 == 18 || time2 == 6) {
-                            speed = speed / 3;
-                            value = value / 3;
-                        }
-                        String wdate = "Date: " + date[0] + "\n" + dt;
-                        short val = (short)Math.round(value);
-                        short spd = (short)Math.round(speed);
-                        String wtemperatue = "Temperature: ";
-                        if (value > 0){
-                            wtemperatue += "+" + val + " °C";
-                        }
-                        else
-                            wtemperatue += val + " °C";
-                        String wweather = "Weather: " + symbol;
-                        String wwind = "Wind direction " + direction + ", speed is " + spd + " mps";
-                        System.out.println(wdate + "\n" + wtemperatue + "\n" + wweather + "\n" + wwind);
-                        System.out.println();
-                    }
-
-                }
-            }
-        }
-        catch(JDOMException | NullPointerException | java.io.IOException e) {
-            e.printStackTrace();
-        }
-    }*/
-
 }

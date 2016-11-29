@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 <?import java.lang.String?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -14,7 +19,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1280.0" styleClass="background" stylesheets="@DarkTheme.css" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1280.0" styleClass="background" stylesheets="@DarkTheme.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
       <SplitPane dividerPositions="0.29381443298969073, 0.4852724594992636, 0.7592047128129602" prefHeight="200.0" prefWidth="1190.0" styleClass="background" stylesheets="@DarkTheme.css" AnchorPane.bottomAnchor="650.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <items>
@@ -35,7 +40,7 @@
             </AnchorPane>
             <AnchorPane prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <Label alignment="CENTER" layoutX="4.0" prefHeight="49.0" prefWidth="324.0" stylesheets="@DarkTheme.css" text="Today">
+                  <Label fx:id="labelDate" alignment="CENTER" layoutX="4.0" prefHeight="49.0" prefWidth="324.0" stylesheets="@DarkTheme.css" text="Today">
                      <styleClass>
                         <String fx:value="label-bright" />
                         <String fx:value="label-header" />
@@ -71,65 +76,38 @@
                <children>
                   <Label alignment="CENTER" prefHeight="17.0" prefWidth="208.0" text="Today" GridPane.columnIndex="1" />
                   <Label alignment="CENTER" prefHeight="17.0" prefWidth="199.0" text="Helpful tips" GridPane.columnIndex="2" />
-                  <Label alignment="CENTER" layoutX="396.0" layoutY="27.0" prefHeight="17.0" prefWidth="199.0" text="Helpful tips" GridPane.columnIndex="4" />
                   <Label alignment="CENTER" layoutX="203.0" layoutY="27.0" prefHeight="17.0" prefWidth="208.0" text="Tomorrow" GridPane.columnIndex="3" />
-                  <Label alignment="CENTER" layoutX="781.0" layoutY="27.0" prefHeight="19.0" prefWidth="140.0" text="Helpful tips" GridPane.columnIndex="6" />
+                  <Label alignment="CENTER" layoutX="396.0" layoutY="27.0" prefHeight="17.0" prefWidth="199.0" text="Helpful tips" GridPane.columnIndex="4" />
                   <Label alignment="CENTER" layoutX="589.0" layoutY="27.0" prefHeight="17.0" prefWidth="208.0" text="After tomorrow" GridPane.columnIndex="5" />
+                  <Label alignment="CENTER" layoutX="781.0" layoutY="27.0" prefHeight="19.0" prefWidth="140.0" text="Helpful tips" GridPane.columnIndex="6" />
                   <Label alignment="CENTER" layoutX="203.0" layoutY="27.0" prefHeight="17.0" prefWidth="208.0" text="Lovely morning" GridPane.rowIndex="1" />
                   <Label alignment="CENTER" layoutX="10.0" layoutY="130.0" prefHeight="17.0" prefWidth="208.0" text="Long day" GridPane.rowIndex="2" />
                   <Label alignment="CENTER" layoutX="10.0" layoutY="130.0" prefHeight="17.0" prefWidth="208.0" text="Nice evening" GridPane.rowIndex="3" />
                   <Label alignment="CENTER" layoutX="10.0" layoutY="444.0" prefHeight="17.0" prefWidth="208.0" text="Quiet night" GridPane.rowIndex="4" />
-                  <ImageView fitHeight="155.0" fitWidth="194.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-                  <ImageView fitHeight="155.0" fitWidth="193.0" layoutX="396.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@../../../../../../../Desktop/resourse/PNGs/partlyCloudyDay.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="155.0" fitWidth="193.0" layoutX="203.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                     <image>
-                        <Image url="@../../../../../../../Desktop/resourse/PNGs/partlyCloudyDay.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="155.0" fitWidth="193.0" layoutX="203.0" layoutY="218.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="3">
-                     <image>
-                        <Image url="@../../../../../../../Desktop/resourse/PNGs/partlyCloudyDay.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="155.0" fitWidth="193.0" layoutX="203.0" layoutY="375.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="4">
-                     <image>
-                        <Image url="@../../../../../../../Desktop/resourse/PNGs/partlyCloudyDay.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="155.0" fitWidth="193.0" layoutX="203.0" layoutY="532.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="4">
-                     <image>
-                        <Image url="@../../../../../../../Desktop/resourse/PNGs/partlyCloudyDay.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="155.0" fitWidth="193.0" layoutX="589.0" layoutY="532.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="3">
-                     <image>
-                        <Image url="@../../../../../../../Desktop/resourse/PNGs/partlyCloudyDay.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="155.0" fitWidth="193.0" layoutX="589.0" layoutY="375.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="2">
-                     <image>
-                        <Image url="@../../../../../../../Desktop/resourse/PNGs/partlyCloudyDay.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="155.0" fitWidth="193.0" layoutX="589.0" layoutY="218.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@../../../../../../../Desktop/resourse/PNGs/partlyCloudyDay.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="155.0" fitWidth="193.0" layoutX="589.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@../../../../../../../Desktop/resourse/PNGs/partlyCloudyDay.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="155.0" fitWidth="193.0" layoutX="973.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="2">
-                     <image>
-                        <Image url="@../../../../../../../Desktop/resourse/PNGs/partlyCloudyDay.png" />
-                     </image>
-                  </ImageView>
+                  <ImageView fx:id="imgTodayMorn" fitHeight="155.0" fitWidth="193.0" layoutX="396.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <ImageView fx:id="imgToday" fitHeight="155.0" fitWidth="193.0" layoutX="203.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <ImageView fx:id="imgTodayEve" fitHeight="155.0" fitWidth="193.0" layoutX="203.0" layoutY="218.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <ImageView fx:id="imgTodayNight" fitHeight="155.0" fitWidth="193.0" layoutX="203.0" layoutY="375.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <ImageView fx:id="imgTomorrowMorn" fitHeight="155.0" fitWidth="194.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <ImageView fx:id="imgTomorrow" fitHeight="155.0" fitWidth="193.0" layoutX="589.0" layoutY="375.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                  <ImageView fx:id="imgTomorrowEve" fitHeight="155.0" fitWidth="193.0" layoutX="589.0" layoutY="532.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                  <ImageView fx:id="imgTomorrowNight" fitHeight="155.0" fitWidth="193.0" layoutX="203.0" layoutY="532.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                  <ImageView fx:id="imgAfterMorn" fitHeight="155.0" fitWidth="193.0" layoutX="589.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                  <ImageView fx:id="imgAfter" fitHeight="155.0" fitWidth="193.0" layoutX="973.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                  <ImageView fx:id="imgAfterEve" fitHeight="155.0" fitWidth="193.0" layoutX="932.0" layoutY="218.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+                  <ImageView fx:id="imgAfterNight" fitHeight="155.0" fitWidth="193.0" layoutX="932.0" layoutY="375.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+                  <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                  <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                  <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                  <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                  <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                  <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                  <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+                  <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+                  <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="6" GridPane.rowIndex="3" />
+                  <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="6" GridPane.rowIndex="4" />
                </children>
             </GridPane>
          </content>
