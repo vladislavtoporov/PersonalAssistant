@@ -10,14 +10,9 @@ import javafx.scene.image.ImageView;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.Calendar;
 import java.io.PrintWriter;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.Calendar;
 import java.util.Scanner;
-
-import static java.awt.SystemColor.text;
 
 public class Controller {
     private final String KAZAN = "http://api.openweathermap.org/data/2.5/forecast?q=Kazan&mode=xml&appid=c897b438605eff38e5df5f6928351367&units=metric";
@@ -70,32 +65,33 @@ public class Controller {
             throw new RuntimeException(e);
         }
     }
+
     private Image setImg(String s) {
         Image image = new Image(STORM);
-            switch (s) {
-                case "thunderstorm":
-                    image = new Image(STORM);
-                    break;
-                case "clear sky":
-                    image = new Image(SUNNY);
-                    break;
-                case "rain":
-                    image = new Image(RAINY);
-                    break;
-                case "snow":
-                    image = new Image(SNOWY);
-                    break;
-                case "fog":
-                    image = new Image(FOG);
-                    break;
-                case "cloudy":
-                    image = new Image(CLOUDY);
-                    break;
-                case "few clouds":
-                    image = new Image(PARTLY_CLOUDY_DAY);
-                    break;
-            }
-            return image;
+        switch (s) {
+            case "thunderstorm":
+                image = new Image(STORM);
+                break;
+            case "clear sky":
+                image = new Image(SUNNY);
+                break;
+            case "rain":
+                image = new Image(RAINY);
+                break;
+            case "snow":
+                image = new Image(SNOWY);
+                break;
+            case "fog":
+                image = new Image(FOG);
+                break;
+            case "cloudy":
+                image = new Image(CLOUDY);
+                break;
+            case "few clouds":
+                image = new Image(PARTLY_CLOUDY_DAY);
+                break;
+        }
+        return image;
     }
 
     @FXML
@@ -259,10 +255,9 @@ public class Controller {
                         line = line.substring(line.indexOf(" ") + 1);
                         if (line.equals("clear sky")) {
                             todayImg[2] = new Image(Main.CLEAR_MOON);
-                        } else if (line.equals("few clouds")){
+                        } else if (line.equals("few clouds")) {
                             todayImg[2] = new Image(Main.PARTLY_CLOUDY_NIGHT);
-                        }
-                        else {
+                        } else {
                             todayImg[2] = setImg(line);
                         }
                         today[2] += Main.getAdvice(k);
@@ -275,10 +270,9 @@ public class Controller {
                         line = line.substring(line.indexOf(" ") + 1);
                         if (line.equals("clear sky")) {
                             tomorrowImg[2] = new Image(Main.CLEAR_MOON);
-                        } else if (line.equals("few clouds")){
+                        } else if (line.equals("few clouds")) {
                             tomorrowImg[2] = new Image(Main.PARTLY_CLOUDY_NIGHT);
-                        }
-                        else {
+                        } else {
                             tomorrowImg[2] = setImg(line);
                         }
                         tomorrow[2] += Main.getAdvice(k);
@@ -291,10 +285,9 @@ public class Controller {
                         line = line.substring(line.indexOf(" ") + 1);
                         if (line.equals("clear sky")) {
                             afterImg[2] = new Image(Main.CLEAR_MOON);
-                        } else if (line.equals("few clouds")){
+                        } else if (line.equals("few clouds")) {
                             afterImg[2] = new Image(Main.PARTLY_CLOUDY_NIGHT);
-                        }
-                        else {
+                        } else {
                             afterImg[2] = setImg(line);
                         }
                         after[2] += Main.getAdvice(k);
@@ -310,10 +303,9 @@ public class Controller {
                         line = line.substring(line.indexOf(" ") + 1);
                         if (line.equals("clear sky")) {
                             todayImg[3] = new Image(Main.CLEAR_MOON);
-                        } else if (line.equals("few clouds")){
+                        } else if (line.equals("few clouds")) {
                             todayImg[3] = new Image(Main.PARTLY_CLOUDY_NIGHT);
-                        }
-                        else {
+                        } else {
                             todayImg[3] = setImg(line);
                         }
                         today[3] += Main.getAdvice(k);
@@ -326,10 +318,9 @@ public class Controller {
                         line = line.substring(line.indexOf(" ") + 1);
                         if (line.equals("clear sky")) {
                             tomorrowImg[3] = new Image(Main.CLEAR_MOON);
-                        } else if (line.equals("few clouds")){
+                        } else if (line.equals("few clouds")) {
                             tomorrowImg[3] = new Image(Main.PARTLY_CLOUDY_NIGHT);
-                        }
-                        else {
+                        } else {
                             tomorrowImg[3] = setImg(line);
                         }
                         tomorrow[3] += Main.getAdvice(k);
@@ -342,10 +333,9 @@ public class Controller {
                         line = line.substring(line.indexOf(" ") + 1);
                         if (line.equals("clear sky")) {
                             afterImg[3] = new Image(Main.CLEAR_MOON);
-                        } else if (line.equals("few clouds")){
+                        } else if (line.equals("few clouds")) {
                             afterImg[3] = new Image(Main.PARTLY_CLOUDY_NIGHT);
-                        }
-                        else {
+                        } else {
                             afterImg[3] = setImg(line);
                         }
                         after[3] += Main.getAdvice(k);

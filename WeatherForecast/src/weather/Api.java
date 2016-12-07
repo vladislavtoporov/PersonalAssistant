@@ -11,13 +11,9 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.URL;
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Locale;
-
-import static java.awt.SystemColor.text;
+import java.util.*;
 
 public class Api {
     final private static int CAPACITY = 14;
@@ -25,7 +21,6 @@ public class Api {
     private static String[] windDirection = new String[CAPACITY];
     private static short[] temp = new short[CAPACITY];
     private static String[] date = new String[CAPACITY];
-
     public static short getTemp(int i) {
         return temp[i];
     }
@@ -36,8 +31,13 @@ public class Api {
 
     public static void weather(String city) throws FileNotFoundException {
         SAXBuilder parser = new SAXBuilder();
-
+        String s;
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.DAY_OF_MONTH, 3);
+        int cal_ = cal.get(Calendar.DAY_OF_MONTH);
         int i = 0, k = 0;
+        String pattern = "##0.#";
+        DecimalFormat decimalFormat = new DecimalFormat(pattern);
         File file = new File("src/weather/resource/weather.txt");
         try {
             if (file.exists()) {
@@ -60,7 +60,7 @@ public class Api {
                         List mixedCo = forecast.getChildren("time");
                         Iterator itr = mixedCo.iterator();
 
-                        while (k < 26 && itr.hasNext()) {
+                        do {
                             Element day = (Element) itr.next();
                             String StrDate = day.getAttributeValue("from");
                             String[] date1 = StrDate.split("T");
@@ -136,21 +136,25 @@ public class Api {
                                 date[i] = date1[0] + " " + dt;
                                 pw.println(date[i]);
                                 short val = (short) Math.round(value);
-                                short spd = (short) Math.round(speed);
+                                double spd = speed;
+                                String format = decimalFormat.format(spd);
                                 temp[i] = val;
                                 if (temp[i] > 0) {
                                     pw.println("Temperature: +" + temp[i] + " °C");
                                 } else {
                                     pw.println("Temperature: " + temp[i] + " °C");
                                 }
-                                windDirection[i] = "Wind direction " + direction + ", speed is " + spd + " mps";
+                                windDirection[i] = "Wind direction " + direction + ", speed is " + format + " mps";
                                 pw.println(windDirection[i]);
                                 weatherState[i] = symbol;
                                 pw.println("Weather: " + weatherState[i]);
                                 i++;
                             }
-                            k++;
+                            s = date[i - 1].split("-")[2];
+                            s = s.substring(0, s.indexOf(" "));
+                            k = Integer.parseInt(s);
                         }
+                        while (k != cal_ && itr.hasNext());
                     }
                 } catch (JDOMException | NullPointerException | java.io.IOException e) {
                     e.printStackTrace();

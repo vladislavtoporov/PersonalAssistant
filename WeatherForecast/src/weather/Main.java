@@ -4,21 +4,11 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
-import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.FileNotFoundException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Scanner;
-import java.io.File;
 
 public class Main extends Application {
-    //final static String KAZAN = "http://api.openweathermap.org/data/2.5/forecast?q=Kazan&mode=xml&appid=c897b438605eff38e5df5f6928351367&units=metric";
-    //final static String ALMET = "http://api.openweathermap.org/data/2.5/forecast?q=Almetyevsk&mode=xml&appid=c897b438605eff38e5df5f6928351367&units=metric";
-    //final static String CHELNY = "http://api.openweathermap.org/data/2.5/forecast?q=NaberezhnyeChelny&mode=xml&appid=c897b438605eff38e5df5f6928351367&units=metric";
     final static String STORM = "weather/resource/PNGs/storm.png";
     final static String SUNNY = "weather/resource/PNGs/sunny.png";
     final static String CLOUDY = "weather/resource/PNGs/cloudy.png";

@@ -1,57 +1,41 @@
-Tue 29.11.16
-2016-11-29 night
-Temperature: 0 °C
-Wind direction West-southwest, speed is 3 mps
+Wed 07.12.16
+2016-12-07 evening
+Temperature: -18 °C
+Wind direction Northwest, speed is 4 mps
 Weather: snow
-2016-11-29 morning
-Temperature: -1 °C
-Wind direction West-southwest, speed is 6 mps
-Weather: snow
-2016-11-29 day
-Temperature: -1 °C
-Wind direction West-southwest, speed is 1 mps
-Weather: snow
-2016-11-29 evening
-Temperature: -5 °C
+2016-12-08 night
+Temperature: -6 °C
+Wind direction West-northwest, speed is 1,1 mps
+Weather: clear sky
+2016-12-08 morning
+Temperature: -18 °C
 Wind direction West, speed is 3 mps
-Weather: snow
-2016-11-30 night
-Temperature: -4 °C
-Wind direction Northwest, speed is 1 mps
-Weather: snow
-2016-11-30 morning
-Temperature: -12 °C
-Wind direction West, speed is 2 mps
 Weather: clear sky
-2016-11-30 day
-Temperature: -3 °C
-Wind direction West-northwest, speed is 1 mps
-Weather: snow
-2016-11-30 evening
-Temperature: -10 °C
-Wind direction West-northwest, speed is 4 mps
-Weather: snow
-2016-12-01 night
-Temperature: -4 °C
-Wind direction West, speed is 1 mps
-Weather: clear sky
-2016-12-01 morning
-Temperature: -15 °C
-Wind direction West, speed is 4 mps
-Weather: clear sky
-2016-12-01 day
+2016-12-08 day
 Temperature: -5 °C
-Wind direction South, speed is 1 mps
-Weather: cloudy
-2016-12-01 evening
-Temperature: -12 °C
-Wind direction South, speed is 3 mps
+Wind direction South-southwest, speed is 1,6 mps
 Weather: snow
-2016-12-02 night
+2016-12-08 evening
+Temperature: -14 °C
+Wind direction South-southwest, speed is 5,1 mps
+Weather: snow
+2016-12-09 night
 Temperature: -3 °C
-Wind direction South, speed is 2 mps
+Wind direction South-southwest, speed is 2 mps
 Weather: snow
-2016-12-02 morning
+2016-12-09 morning
 Temperature: -7 °C
-Wind direction South, speed is 5 mps
+Wind direction Southwest, speed is 6,3 mps
+Weather: snow
+2016-12-09 day
+Temperature: -2 °C
+Wind direction Southwest, speed is 2,2 mps
+Weather: snow
+2016-12-09 evening
+Temperature: -7 °C
+Wind direction Southwest, speed is 7,1 mps
+Weather: snow
+2016-12-10 night
+Temperature: -3 °C
+Wind direction Southwest, speed is 2,3 mps
 Weather: snow

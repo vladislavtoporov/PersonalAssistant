@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Class-Path: weather.Controller weather.Api weather.ch.makery.weather.v
+ iew.WeatherOverview.fxml
+Main-Class: weather.Main
+
