@@ -12,23 +12,23 @@
 .label-bright {
     -fx-font-size: 11pt;
     -fx-font-family: "Century Gothic";
-    -fx-text-fill: white;
+    -fx-text-fill: black;
     -fx-opacity: 1;
 }
 
 .label-header {
-    -fx-font-size: 26pt;
+    -fx-font-size: 23pt;
     -fx-font-family: "Century Gothic";
     -fx-text-fill: white;
     -fx-opacity: 1;
 }
 
 .table-view {
-    -fx-base: deepskyblue;
-    -fx-control-inner-background: deepskyblue;
-    -fx-background-color: deepskyblue;
-    -fx-table-cell-border-color: transparent;
-    -fx-table-header-border-color: transparent;
+    -fx-base: #FFFAFA;
+    -fx-control-inner-background: #FFFAFA;
+    -fx-background-color: #FFFAFA;
+    -fx-table-cell-border-color: #FFFAFA;
+    -fx-table-header-border-color: #FFFAFA;
     -fx-padding: 5;
 }
 
@@ -49,7 +49,7 @@
 }
 
 .table-view .column-header .label {
-    -fx-font-size: 20pt;
+    -fx-font-size: 30pt;
     -fx-font-family: "Century Gothic";
     -fx-text-fill: white;
     -fx-alignment: center-left;
@@ -84,29 +84,23 @@
     -fx-opacity: 0.9;
 }
 
-.menu .left-container {
-	-fx-background-color: deepskyblue;
-}
 
-.text-field {
-    -fx-font-size: 12pt;
+.text-area {
+    -fx-background-color: #FFFAFA;
+    -fx-border-width: 0;
+    -fx-font-size: 9pt;
     -fx-font-family: "Century Gothic";
 }
 
-/* 
- * Metro style Push Button
- * Author: Pedro Duque Vieira
- * http://pixelduke.wordpress.com/2012/10/23/jmetro-windows-8-controls-on-java/
- */
 .button {
     -fx-padding: 5 22 5 22;   
-    -fx-border-color: #e2e2e2;
+    -fx-border-color: #ffffff;
     -fx-border-width: 2;
     -fx-background-radius: 0;
     -fx-background-color: deepskyblue;
     -fx-font-family: "Century Gothic", Helvetica, Arial, sans-serif;
     -fx-font-size: 14pt;
-    -fx-text-fill: #d8d8d8;
+    -fx-text-fill: #ffffff;
     -fx-background-insets: 0 0 0 0, 0, 1, 2;
 }
 
@@ -122,7 +116,7 @@
 .button:focused {
     -fx-border-color: white, white;
     -fx-border-width: 1, 1;
-    -fx-border-style: solid, segments(1, 1);
+    -fx-border-style: solid;
     -fx-border-radius: 0, 0;
     -fx-border-insets: 1 1 1 1, 0;
 }

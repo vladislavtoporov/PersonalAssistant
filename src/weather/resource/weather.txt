@@ -1,0 +1,37 @@
+Mon 12.12.16
+2016-12-13 night
+Temperature: -5 °C
+Wind direction South-southwest, speed is 0,9 mps
+Weather: snow
+2016-12-13 morning
+Temperature: -15 °C
+Wind direction Southwest, speed is 2,2 mps
+Weather: snow
+2016-12-13 day
+Temperature: -6 °C
+Wind direction West-northwest, speed is 1,1 mps
+Weather: clear sky
+2016-12-13 evening
+Temperature: -18 °C
+Wind direction West, speed is 3,1 mps
+Weather: clear sky
+2016-12-14 night
+Temperature: -6 °C
+Wind direction West-southwest, speed is 1,1 mps
+Weather: clear sky
+2016-12-14 morning
+Temperature: -15 °C
+Wind direction West-southwest, speed is 3,5 mps
+Weather: snow
+2016-12-14 day
+Temperature: -5 °C
+Wind direction Southwest, speed is 1,6 mps
+Weather: snow
+2016-12-14 evening
+Temperature: -14 °C
+Wind direction Southwest, speed is 5,2 mps
+Weather: snow
+2016-12-15 night
+Temperature: -5 °C
+Wind direction Southwest, speed is 1,9 mps
+Weather: cloudy
